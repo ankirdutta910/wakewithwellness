@@ -99,7 +99,7 @@ function card(title, content, publisher, when) {
       <p id="data-content" style="text-align: justify;">${content}</p>
     </header>
     <div class="card-publisher" style="margin-left:10px;font-size:11.5px">
-      <span id="data-publisher">${publisher}</span> | Post ID: <span style="color:red" id="data-date">${when} </span>
+      <span id="data-publisher">${publisher}</span> | Post ref: <span style="color:red" id="data-date">${when} </span>
     </div>
     <footer class="card-footer" style="padding:10px">
       <a class="card-footer-item" href="#preview" id="edit">Edit</a>
