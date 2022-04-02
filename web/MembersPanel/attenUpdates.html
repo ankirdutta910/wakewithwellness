@@ -2,1350 +2,314 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    
-    <title>AttenUpdates</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
-    <link href="../assets/img/favicon.png" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AttendanceUpdates</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   
-</head>
+  <link href="../assets/img/favicon.png" rel="icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <style>
 
-<body oncontextmenu="return false">
-    <div class="main-wrapper">
-        <div class="header">
-			<div class="header-left">
-				<a href="main.html" class="logo">
-					<img src="../assets/img/favicon.png" width="35" height="35" alt=""> <span>WakeWithWellness</span>
-				</a>
-			</div>
-			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
-          
-         
-        </div>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="menu-title">Main</li>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-                       
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
 
-                        <li>
-                            <a href="main.html"><i class="fa fa-home"></i> <span>Home</span></a>
-                        </li>
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
-                        <li>
-							<a href="activities.html"><i class="fa fa-bell-o"></i> <span>Notifications</span></a>
-						</li>
-				
-						<li class="submenu">
-							<a><i class="fa fa-user"></i> <span> Members </span> <span class="menu-arrow"></span></a>
-							<ul style="display: none;">
-								<li><a href="employees.html">Members List</a></li>
-								<li><a href="attendance.html">Attendance</a></li>
-                                <li><a href="attenUpdates.html">Attendance Updates</a></li>
-                                <li><a href="leaves.html">Leaves</a></li>
-							</ul>
-						</li>
-						<li class="submenu">
-							<a><i class="fa fa-money"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
-							<ul style="display: none;">
-								<li><a href="payments.html">Payments</a></li>
-							</ul>
-						</li>
-                     
-                    </ul>
-                </div>
-            </div>
-        </div>
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+    /* Add a black background color to the top navigation */
+  .topnav {
+    background-color: #009ce7;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(27, 27, 27);
+    color: rgb(235, 235, 235);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  </style>
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #d4d4d4;
+    text-align: left;
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #c5c5c5;
+  }
 
  
-        <div class="page-wrapper">
-          <div class="content">
-               <div class="row">
-                   <div class="col-sm-12">
-                       <h4 class="page-title">Attendance Updates</h4>
-                   </div>
-               </div>
-             <p style="color: red;font-style: italic;">* Minimum 60% attendance is required</p>
-               <div class="row">
-                   <div class="col-lg-12">
-                             <div class="table-responsive">
-                           <table class="table table-striped custom-table mb-0">
-                             
-                               <thead>
-                                   <tr>
-                                       <th>Reg no.</th>
-                                       <th>Members</th>
-                                       <th>Department</th>
-                                       <th>Percent</th>
-                                       <th>Jul'21</th>
-                                       <th>Aug'21</th>
-                                       <th>Sep'21</th>
-                                       <th>Oct'21</th>
-                                       <th>Nov'21</th>
-                                       <th>Dec'21</th>
-                                       <th>Jan'22</th>
-                                       <th>Feb'22</th>
-                                       <th>Mar'22</th>
-                                       <th>Apr'22</th>
-                              
-                                   </tr>
-                               </thead>
-                               <tbody>
+  </style>
 
-                                <tr>
-                                    <td>21WWW0014</td>
-                                    <td>Maitreya Goswami</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
+<style>
+  #myInput {
+background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+background-position: 10px 12px; /* Position the search icon */
+background-repeat: no-repeat; /* Do not repeat the icon image */
+width: 100%; /* Full-width */
+font-size: 16px; /* Increase font-size */
+padding: 12px 20px 12px 40px; /* Add some padding */
+border: 1px solid #ddd; /* Add a grey border */
+margin-bottom: 12px; /* Add some space below the input */
+}
 
-                                <tr>
-                                    <td>21WWW0015</td>
-                                    <td>Bhaswati devi</td>
-                                    <td>Design & Media</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">68.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
+</style>
 
-                                <tr>
-                                    <td>21WWW0016</td>
-                                    <td>Hashna Sonowal</td>
-                                    <td>Events</td>
-                                    <td style="font-weight: 500;color:rgb(77, 77, 77);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
 
 
-                                <tr>
-                                    <td>21WWW0017</td>
-                                    <td>Barasha Rani Thakuria</td>
-                                    <td>Design & Media</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
+</head>
 
-                                <tr>
-                                    <td>21WWW0018</td>
-                                    <td>Rafia Lutfa Haque</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: red">50.00%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
+<body>
 
-                                <tr>
-                                    <td>21WWW0019</td>
-                                    <td>Satvik Kandregula</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">75.00%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0020</td>
-                                    <td>Srii Swathish R</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">81.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>21WWW0021</td>
-                                    <td>Anjali Sheokand</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">75.00%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0022</td>
-                                    <td>Manash Jyoti Ojah</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0023</td>
-                                    <td>Prateek Yash</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">81.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0024</td>
-                                    <td>C.V. S Anirudh</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">93.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0025</td>
-                                    <td>Gautam Batra</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">68.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0026</td>
-                                    <td>Suhail Khan Madar Naik</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: red">43.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0027</td>
-                                    <td>Sheekha Tripathy</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0028</td>
-                                    <td>Nandita Garg</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">81.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0029</td>
-                                    <td>Yashasvi Yadav</td>
-                                    <td>Design & Media</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">75.00%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0030</td>
-                                    <td>Trishna Das</td>
-                                    <td>Design & Media</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0031</td>
-                                    <td>Rudrani Garg</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-primary"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>21WWW0032</td>
-                                    <td>Tanaya Goswami</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">68.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-primary"></i> <i class="fa fa-check text-primary"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-primary"></i> <i class="fa fa-check text-primary"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0033</td>
-                                    <td>Tinashree Chamuah</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: red">43.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-
-                                   <tr>
-                                       <td>21WWW0034</td>
-                                       <td>Sangeeta Sen</td>
-                                       <td>Editorial</td>
-                                       <td style="font-weight: 500;color: rgb(77, 77, 77);">81.25%</td>
-                                       <!--July21-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Aug21-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Sep21-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Oct21-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Nov21-->
-                                       <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Dec21-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                      <!--Jan22-->
-                                      <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                       <!--Feb22-->
-                                       <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                       <!--Mar22-->
-                                      
-                                       <!--Apr22-->
-                                       
-                                   </tr>
-
-                                   <tr>
-                                    <td>21WWW0036</td>
-                                    <td>Sagar Acharjee</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: red;">56.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-                                <tr style="background-color: orange;">
-                                    <td>21WWW0037</td>
-                                    <td>Preeyamjit kalita</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">18.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr style="background-color: orange;">
-                                    <td>21WWW0038</td>
-                                    <td>David Pradhan</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">12.5%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0039</td>
-                                    <td>Prakriti Prasad</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>21WWW0040</td>
-                                    <td>Harsh Verma</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: red;">43.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0041</td>
-                                    <td>Upashana Talukdar</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">87.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                           
-
-
-
-                                <tr>
-                                    <td>21WWW0045</td>
-                                    <td>Sakshi Jain</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">68.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-
-                                <tr>
-                                    <td>21WWW0047</td>
-                                    <td>Ruprekha Sarma</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: red;">56.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr style="background-color: orange;">
-                                    <td>21WWW0049</td>
-                                    <td>Jugal Chandra Kalita</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">18.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-
-                                <tr style="background-color: orange;">
-                                    <td>21WWW0050</td>
-                                    <td>Prabal Jyoti Sarma</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">18.75%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0052</td>
-                                    <td>Allen John</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: red;">37.50%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0055</td>
-                                    <td>Fahim Tanvir Rahman</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: red;">31.25%</td>
-                                    <!--July21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Aug21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Sep21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Oct21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Nov21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0058</td>
-                                    <td>Gargee Chowdhury</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: red;">50.00%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                   <!--Jan22-->
-                                   <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-close text-danger"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0060</td>
-                                    <td>Mohini Mitra</td>
-                                    <td>Design & Media</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-primary"></i> <i class="fa fa-check text-primary"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0061</td>
-                                    <td>Mani Bharathi.S</td>
-                                    <td>Curation</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">50%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0062</td>
-                                    <td>Ankita Barman Roy</td>
-                                    <td>Events</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">50%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0063</td>
-                                    <td>Archita Das</td>
-                                    <td>Editorial</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0064</td>
-                                    <td>Purbasha Borah</td>
-                                    <td>Events</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                                <tr>
-                                    <td>21WWW0065</td>
-                                    <td>Bandip Jyoti Medhi</td>
-                                    <td>Public Relations</td>
-                                    <td style="font-weight: 500;color: rgb(77, 77, 77);">50%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-close text-danger"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-
-                                <tr>
-                                    <td>21WWW0066</td>
-                                    <td>Gurbaaz Singh Dhaliwal</td>
-                                    <td>Events</td>
-                                    <td style="font-weight: 500;color: rgb(29, 168, 1);">100%</td>
-                                    <!--July21-->
-                                  <td>- -</td>
-                                    <!--Aug21-->
-                                    <td>- -</td>
-                                    <!--Sep21-->
-                                    <td>- -</td>
-                                    <!--Oct21-->
-                                    <td>- -</td>
-                                    <!--Nov21-->
-                                    <td>- -</td>
-                                    <!--Dec21-->
-                                    <td>- -</td>
-                                   <!--Jan22-->
-                                   <td>- -</td>
-                                    <!--Feb22-->
-                                    <td><i class="fa fa-check text-success"></i> <i class="fa fa-check text-success"></i></td>
-                                    <!--Mar22-->
-                                   
-                                    <!--Apr22-->
-                                    
-                                </tr>
-
-
-                             
-
-                               
-                                 
-                                
-                                
-                               </tbody>
-                           </table>
-                             </div>
-                   </div>
-               </div>
-           </div>
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
+    <div class="header">
+        <div class="header-left">
+            <a href="main.html" class="logo">
+                <img src="../assets/img/favicon.png" width="35" height="35" alt=""> <span>WakeWithWellness</span>
+            </a>
         </div>
-		
+        <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+        <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
+      
+     
     </div>
-    <div class="sidebar-overlay" data-reff=""></div>
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
-    <script src="assets/js/jquery.slimscroll.js"></script>
-    <script src="assets/js/select2.min.js"></script>
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="assets/js/app.js"></script>
+
+  <main id="main"> 
+    <div class="container-fluid" style="margin-top: 60px">
+      <h6 style="text-align: center;font-weight: bold;color: #ffffff;background-color: #4b4b4b;padding: 10px;">ATTENDANCE UPDATES</h6>
+
+
+        <div class="table-responsive custom-table-responsive">
+
+          <input type="text" id="myInput" onkeyup="myFunction()"  placeholder="Search by name...">
+
+            <table class="table custom-table" id="myTable" style="color: rgb(0, 0, 0);cursor: pointer;">
+                <thead>
+                    <tr style="background-color: #5793D1;color: #fff;"> 
+                      <th scope="col">Reg No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Percentage</th>
+                 
+                    <th scope="col">Apr1'22</th> 
+                    <th scope="col">Mar2'22</th> 
+                    <th scope="col">Mar1'22</th> 
+                    <th scope="col">Feb2'22</th> 
+                    <th scope="col">Feb1'22</th> 
+                    <th scope="col">Jan2'22</th> 
+                    <th scope="col">Jan1'22</th> 
+                    <th scope="col">Dec2'21</th> 
+                    <th scope="col">Dec1'21</th> 
+                    <th scope="col">Nov2'21</th> 
+                    <th scope="col">Nov1'21</th> 
+                    <th scope="col">Oct2'21</th> 
+                    <th scope="col">Oct1'21</th> 
+                    <th scope="col">Sept2'21</th>
+                    <th scope="col">Sept1'21</th>
+                    <th scope="col">Aug2'21</th>
+                    <th scope="col">Aug1'21</th>
+                    <th scope="col">July3'21</th>
+                    <th scope="col">July2'21</th>
+                    <th scope="col">July1'21</th>
+                   
+                  
+                 
+                    
+                    
+                    
+                    </tr>
+                </thead>
+                <tbody id="mytable">
+                   
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
+
+
+
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+
+
+
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
 
 
   <script>
-    
-    document.onkeydown=function(e)
-    {
-      if (event.keyCode == 123) 
-      {
-        return false;
-      }
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))
-      {
-        return false;
-      }
+      //Connection
+          // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDoiXHxMG_vZPHz0eeJj5s661xhfU-Y4_4",
+            authDomain: "members-76725.firebaseapp.com",
+            projectId: "members-76725",
+            storageBucket: "members-76725.appspot.com",
+            messagingSenderId: "734645197873",
+            appId: "1:734645197873:web:808127fdb4d643d4d24910",
+            measurementId: "G-7LYZ3R48GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        db.settings({ timestampInSnapshots: true});
+
+
+        db.collection("attendance").orderBy('regno').get().then(querySnapshot=>{
+        querySnapshot.forEach(doc=>{
+            let data = doc.data();
+            let row  = `<tr>
+              
+                       <th scope="row">
+                          <label>${data.regno}</label>
+                        </th>
+                            <td>${data.name}</td>
+                            <td>${data.per}</td>
+
+                            <td>${data.Apr1}</td>
+                            <td>${data.Mar2}</td>
+                            <td>${data.Mar1}</td>
+                            <td>${data.Feb2}</td>
+                            <td>${data.Feb1}</td>
+                            <td>${data.Jan2}</td>
+                            <td>${data.Jan1}</td>
+                            <td>${data.Dec2}</td>
+                            <td>${data.Dec1}</td>
+                            <td>${data.Nov2}</td>
+                            <td>${data.Nov1}</td>
+                            <td>${data.Oct2}</td>
+                            <td>${data.Oct1}</td>
+                            <td>${data.Sept2}</td>
+                            <td>${data.Sept1}</td>
+                            <td>${data.Aug2}</td>
+                            <td>${data.Aug1}</td>
+                            <td>${data.July3}</td>
+                            <td>${data.July2}</td>
+                            <td>${data.July1}</td>
+                      </tr>`;
+            let table = document.getElementById('myTable')
+            table.innerHTML += row
+        })
+    })
+
   
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) 
-      {
-        return false;
-      }
-  
-      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) 
-      {
-        return false;
-      }
-    }
-  
+    .catch(err=>{
+        console.log(`Error: ${err}`)
+    });
+
   </script>
 
- 
+
+<script>
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+
+
+
+
+    
+
 </body>
 
 </html>
