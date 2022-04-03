@@ -26,31 +26,22 @@ function submitForm(e){
   var name = getInputVal('Membername');
   var email = getInputVal('Email');
   var contact = getInputVal('Contact');
-  var whatsapp = getInputVal('Whatsapp');
-  var blood = getInputVal('Blood');
   var qualifications = getInputVal('Qualifications');
   var college = getInputVal('College');
-  var state = getInputVal('State');
-  var pincode = getInputVal('Pincode');
-  var country = getInputVal('Country');
   var department = getInputVal('Department');
 
-  var experience = getInputVal('Experience');
   var checkbox = getInputVal('Checkbox');
   
 
 
   // Save message
-  saveData(name, email, contact, whatsapp, blood, qualifications, college, state, pincode, country, department, experience, checkbox);
+  saveData(name, email, contact, qualifications, college, department, checkbox);
 
 
  // Show alert
  document.querySelector('.alert').style.display = 'block';
+ document.querySelector('.form').style.display = 'none';
 
- // Hide alert after 3 seconds
- setTimeout(function(){
-   document.querySelector('.alert').style.display = 'none';
- },3000);
 
  // Clear form
  document.getElementById('registrations').reset();
@@ -62,21 +53,15 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveData(name, email, contact, whatsapp, blood, qualifications, college, state, pincode, country, department, experience, checkbox){
+function saveData(name, email, contact, qualifications, college, department, checkbox){
   var newDataRef = dataRef.push();
   newDataRef.set({
     name: name,
     email:email,
     contact:contact,
-    whatsapp:whatsapp,
-    blood:blood,
     qualifications:qualifications,
     college:college,
-    state:state,
-    pincode:pincode,
-    country:country,
     department:department,
-    experience:experience,
     checkbox:checkbox
   });
 }
