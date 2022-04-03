@@ -26,7 +26,6 @@ function submitForm(e){
   var name = getInputVal('Membername');
   var email = getInputVal('Email');
   var contact = getInputVal('Contact');
-  var qualifications = getInputVal('Qualifications');
   var college = getInputVal('College');
   var department = getInputVal('Department');
 
@@ -35,7 +34,7 @@ function submitForm(e){
 
 
   // Save message
-  saveData(name, email, contact, qualifications, college, department, checkbox);
+  saveData(name, email, contact, college, department, checkbox);
 
 
  // Show alert
@@ -53,13 +52,12 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveData(name, email, contact, qualifications, college, department, checkbox){
+function saveData(name, email, contact, college, department, checkbox){
   var newDataRef = dataRef.push();
   newDataRef.set({
     name: name,
     email:email,
     contact:contact,
-    qualifications:qualifications,
     college:college,
     department:department,
     checkbox:checkbox
