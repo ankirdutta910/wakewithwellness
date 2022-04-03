@@ -93,7 +93,7 @@
     
 
         <div class="container-fluid" style="margin-top: 10px">
-          <h6 style="text-align: center;font-weight: bold;color: #ffffff;background-color: #4b4b4b;padding: 10px;">MEMBERS REGISTRATION</h6>
+          <h6 style="text-align: center;font-weight: bold;color: #ffffff;background-color: #4b4b4b;padding: 10px;">MEMBERS REGISTRATION (Design & Marketing)</h6>
 
             <div class="table-responsive custom-table-responsive">
     
@@ -104,13 +104,9 @@
                         <th scope="col">Name.</th>
                         <th scope="col">Email</th>
                         <th scope="col">Contact</th>
-                        <th scope="col">Whatsapp</th>
                         <th scope="col">Department</th>
-                    
                         <th scope="col">College</th>
-                        <th scope="col">Qualification</th>
-                        <th scope="col">Experience</th>
-                        <th scope="col">State</th>
+                 
 
                   
                         </tr>
@@ -175,15 +171,10 @@
                     function(CurrentRecord){
                         var name = CurrentRecord.val().name;
                         var email = CurrentRecord.val().email;
-                        var contact = CurrentRecord.val().contact;
-                        var whatsapp = CurrentRecord.val().whatsapp;
+                        var contact = CurrentRecord.val().contact;            
                         var department = CurrentRecord.val().department;
-                  
                         var college = CurrentRecord.val().college;
-                        var qualification = CurrentRecord.val().qualifications;
-                        var experience = CurrentRecord.val().experience;
-                        var state = CurrentRecord.val().state;
-                        AddItemsToTable(name,email,contact,whatsapp,department,college,qualification,experience,state);
+                        AddItemsToTable(name,email,contact,department,college);
 
                     }
                 );
@@ -195,7 +186,7 @@
 
         //Filling the table
         var stdNo = 0;
-        function AddItemsToTable(name,email,contact,whatsapp,department,college,qualification,experience,state){
+        function AddItemsToTable(name,email,contact,department,college,){
             var tbody = document.getElementById('tbody1');
             var trow = document.createElement('tr');
             var td1 = document.createElement('td');
@@ -204,33 +195,23 @@
             var td4 = document.createElement('td');
             var td5 = document.createElement('td');
             var td6 = document.createElement('td');
-            var td7 = document.createElement('td');
-            var td8 = document.createElement('td');
-            var td9 = document.createElement('td');
-            var td10 = document.createElement('td');
+          
   
             
             td1.innerHTML = ++stdNo;
             td2.innerHTML = name;
             td3.innerHTML = email;
             td4.innerHTML = contact;
-            td5.innerHTML = whatsapp;
-            td6.innerHTML = department;
-        
-            td7.innerHTML = college;
-            td8.innerHTML = qualification;
-            td9.innerHTML = experience;
-            td10.innerHTML = state;
+            td5.innerHTML = department;
+            td6.innerHTML = college;
+
             trow.appendChild(td1); 
             trow.appendChild(td2); 
             trow.appendChild(td3); 
             trow.appendChild(td4); 
             trow.appendChild(td5); 
             trow.appendChild(td6); 
-            trow.appendChild(td7); 
-            trow.appendChild(td8); 
-            trow.appendChild(td9);
-            trow.appendChild(td10); 
+          
  
             
             tbody.appendChild(trow);
