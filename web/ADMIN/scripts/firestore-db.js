@@ -466,6 +466,8 @@ async function getuserInfoRealtime(userID){
                                     </tr>
 
 
+    
+
 
                                    
                                 <tr>
@@ -500,36 +502,9 @@ async function getuserInfoRealtime(userID){
 									<table class="table mb-0">
 									
 										<tbody>
-											<tr>
-												<td style="min-width: 200px;">
-													
-													<h2><a href="internattendance.html"  style="color: green;font-weight: 500;">Attendance</a></h2>
-												</td>                 
-
-												<td class="text-right">
-													<a href="internattendance.html"  class="btn btn-outline-success take-btn">View</a>
-												</td>
-											</tr>
-											<tr>
-												<td style="min-width: 200px;">
-												
-													<h2><a href="registrations.html">Registrations</a></h2>
-												</td>                 
-
-												<td class="text-right">
-													<a href="registrations.html" class="btn btn-outline-primary take-btn">View</a>
-												</td>
-											</tr>
-											<tr>
-												<td style="min-width: 200px;">
-												
-													<h2><a href="Internagreement.html">Agreements</a></h2>
-												</td>                 
-
-												<td class="text-right">
-													<a href="Internagreement.html" class="btn btn-outline-primary take-btn">View</a>
-												</td>
-											</tr>
+											
+									
+											
 											<tr>
 												<td style="min-width: 200px;">
 													
@@ -540,27 +515,9 @@ async function getuserInfoRealtime(userID){
 													<a href="internmembers.html" class="btn btn-outline-primary take-btn">View</a>
 												</td>
 											</tr>
-											<tr>
-												<td style="min-width: 200px;">
-													
-													<h2><a href="InternLeave.html">Leave Requests</a></h2>
-												</td>                 
-					
-												<td class="text-right">
-													<a href="InternLeave.html" class="btn btn-outline-primary take-btn">View</a>
-												</td>
-											</tr>
+											
 
-                                                       <tr>
-												<td style="min-width: 200px;">
-													
-													<h2><a href="../interns/task.html">Task Updates</a></h2>
-												</td>                 
-					
-												<td class="text-right">
-													<a href="../interns/task.html" class="btn btn-outline-primary take-btn">View</a>
-												</td>
-											</tr>
+                                                      
 										</tbody>
 									</table>
 								</div>
@@ -568,61 +525,9 @@ async function getuserInfoRealtime(userID){
 						</div>
 					</div>
 
-                         <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-						<div class="hospital-barchart">
-							<h4 class="card-title d-inline-block">Intern's Management</h4>
-						</div>
-						<div class="bar-chart">
-						
-							<div class="chart clearfix">
-								<div class="item">
-									<div class="bar">
-										<span class="percent">6</span>
-										<div class="item-progress" data-percent="16">
-											<span class="title">DESIGN</span>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="bar">
-										<span class="percent">3</span>
-										<div class="item-progress" data-percent="71">
-											<span class="title">Marketing</span>
-										</div>
-									</div>
-								</div>
-								
-							
-								
-							</div>
-						</div>
-
-
                         
-					 </div>
-                     <div class="col-12 col-md-6 col-lg-8 col-xl-8">
-                     <div class="card">
-                         <div class="card-header">
-                             <h4 class="card-title d-inline-block">EXTRA PANEL</h4> 
-                         </div>
-                         <div class="card-body p-0">
-                             <div class="table-responsive">
-                                 <table class="table mb-0">
-                                 
-                                     <tbody>
-                                 
-     
-
-                                         <tr>
-                                         <td style="min-width: 200px;">
-                                             
-                                             <h2><a href="instagramlive.html"  >InstaLiveForm Responses</a></h2>
-                                         </td>                 
- 
-                                         <td class="text-right">
-                                             <a href="instagramlive.html"  class="btn btn-outline-primary take-btn">View</a>
-                                         </td>
-                                     </tr>
+                  
+                        
 
 
 
@@ -755,14 +660,6 @@ async function allUserDetails(){
     })
  
 }
-
-
-
-
-
-
-
-
 
 
 
