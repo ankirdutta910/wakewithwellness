@@ -13,7 +13,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Reference messages collection
-var dataRef = firebase.database().ref('Recruitment');
+var dataRef = firebase.database().ref("Recruitment/");
 
 // Listen for form submit
 document.getElementById('registrations').addEventListener('submit', submitForm);
@@ -27,6 +27,7 @@ function submitForm(e){
   var email = getInputVal('Email');
   var contact = getInputVal('Contact');
   var whatsapp = getInputVal('Whatsapp');
+  var blood = getInputVal('Blood');
   var qualifications = getInputVal('Qualifications');
   var college = getInputVal('College');
   var state = getInputVal('State');
@@ -40,7 +41,7 @@ function submitForm(e){
 
 
   // Save message
-  saveData(name, email, contact, whatsapp, qualifications, college, state, pincode, country, department, experience, checkbox);
+  saveData(name, email, contact, whatsapp, blood, qualifications, college, state, pincode, country, department, experience, checkbox);
 
 
  // Show alert
@@ -61,13 +62,14 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveData(name, email, contact, whatsapp, qualifications, college, state, pincode, country, department, experience, checkbox){
+function saveData(name, email, contact, whatsapp, blood, qualifications, college, state, pincode, country, department, experience, checkbox){
   var newDataRef = dataRef.push();
   newDataRef.set({
     name: name,
     email:email,
     contact:contact,
     whatsapp:whatsapp,
+    blood:blood,
     qualifications:qualifications,
     college:college,
     state:state,
