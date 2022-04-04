@@ -80,7 +80,7 @@
 
 </head>
 
-<body style="overflow-x: hidden;" oncontextmenu="return false" >
+<body style="overflow-x: hidden;" oncontextmenu="return false">
   <!--oncontextmenu="return false"-->
 
   <!-- ======= Header ======= -->
@@ -106,7 +106,7 @@
           <li class="dropdown"><a href="#"><span style="color: rgb(255, 136, 0);">Login</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="web/MembersPanel/main.html">Member</a></li>
-      
+              <li ><a  href="web/interns/main.html">Interns</a></li>
               <li><a style="color: red;font-weight: bold;" href="web/ADMIN/main.html">Admin</a></li>
    
             </ul>
@@ -126,13 +126,21 @@
   <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
 
-   <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-     
-     
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>WakeWithWellness</h1>
+          <h2>We Are People Caring For People</h2>
+        </div>
+      </div>
+
+      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+   
+
+    
         <div class="col-xl-2 col-md-4">
           <div class="icon-box" style="cursor: pointer;" onclick="location.href='web/recruitment.html'">
             <i class="fa fa-address-card" aria-hidden="true"></i>
-            <h3><a>Recruitment'22</a></h3>
+            <h3><a>Volunteership Program</a></h3>
           </div>
         </div>
 
@@ -146,7 +154,7 @@
 
 
         <div class="col-xl-2 col-md-4">
-          <div class="icon-box" style="cursor: pointer;" onclick="location.href='web/helplineno.html'">
+          <div class="icon-box" style="cursor: pointer;" onclick="location.href=''">
             <i class="fa fa-phone" aria-hidden="true"></i>
             <h3><a>Suicidal Helpline</a></h3>
           </div>
@@ -400,18 +408,18 @@
   <div class="row">
    
     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20"> 
-      <iframe style="height: 200px;" width="100%" height="auto" src="https://www.youtube.com/embed/MN5FAKXI3OY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <iframe style="height: 200px;" width="100%" height="auto" src="https://www.youtube.com/embed/MN5FAKXI3OY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
  
 
 
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20"> 
-   
         <iframe  style="height: 200px;" width="100%" height="auto" src="https://www.youtube.com/embed/q9PqM6-vEsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-  
     </div>
 
-
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 m-b-20"> 
+      <iframe style="height: 200px;" width="100%" height="auto" src="https://www.youtube.com/embed/EmqRYOKdmQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
   </div>
 
@@ -479,15 +487,19 @@
             </div>
           </div>
         </div>
-            
 
-          <div class="row" style="margin-top: 10px;">
+  
+        </div>
+
+
+
+        <div class="row" style="margin-top: 10px;">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="cursor: pointer;">
             <div class="container" id="icon">
               <img src="https://firebasestorage.googleapis.com/v0/b/website-818ed.appspot.com/o/MedicalCampDhmj%2F1.JPG?alt=media&token=b390f6fe-ad10-41f9-9f9f-d815a045cd75" class="img-fluid" alt="">
               <div>
               <h5 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold;margin-top: 10px;">Wellness Drive - Medical & Health CheckUp</h5>
-              <p>(14th March 2022)</p>
+              <p>(14th March 2021)</p>
               <div>
                 <a style="font-style: italic;color: #5793D1;float: right;font-size: 12px;" >Know More</a>
               </div>
@@ -496,17 +508,18 @@
 
 
        </div>
-        
 
-          
-  
-        </div>
+    
+      
+
+
+      </div>
       </section><!-- End Events Section -->
 
 
 
        <!-- ======= Collaborations Section ======= -->
-       <section id="clients" class="clients">
+       <section id="clients" class="clients" hidden>
         <div class="container" data-aos="zoom-in">
           <div class="section-title">
             <h2>Collaborations</h2>
@@ -757,8 +770,6 @@
 
   <div id="preloader"></div>
 
-  
-
 
 
   <script src="web/assets/vendor/aos/aos.js"></script>
@@ -774,7 +785,7 @@
   <script>(function(w, d) { w.CollectId = "6245bf44b5bceb57428b4ca5"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 
 
-  <script>
+<script>
     function updateCounter() {
     fetch('https://api.countapi.xyz/update/WWWHome/wwwhome/?amount=1')
         .then(res => res.json())
