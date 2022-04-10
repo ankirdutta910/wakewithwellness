@@ -162,8 +162,8 @@ async function getuserInfoRealtime(userID){
                         <textarea id="work" maxlength="300" style="padding: 1px;color:white"  required ></textarea>
                           
                           <select id="attend" style="color: white;font-weight: 400;">
-                            <option style="color: rgb(5, 216, 33);font-weight: 400;" value="Present">Present</option>
-                            <option style="color: red;font-weight: 400;" value="Absent">Absent</option>
+                            <option style="color: rgb(5, 216, 33);font-weight: 400;" value="P">Present</option>
+                            <option style="color: red;font-weight: 400;" value="A">Absent</option>
                           </select>
                                 <div class="alert">Attendance posted successfully</div>
                           <div class="btn-block">
