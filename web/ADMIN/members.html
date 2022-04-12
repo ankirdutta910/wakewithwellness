@@ -297,7 +297,7 @@ margin-bottom: 12px; /* Add some space below the input */
         db.settings({ timestampInSnapshots: true});
 
 
-        db.collection("users").orderBy('department').get().then(querySnapshot=>{
+        db.collection("users").orderBy('regno').get().then(querySnapshot=>{
         querySnapshot.forEach(doc=>{
             let data = doc.data();
             let row  = `<tr>
@@ -309,7 +309,8 @@ margin-bottom: 12px; /* Add some space below the input */
                             <td>${data.email}</td>
                             <td>${data.phone}</td>
                             <td>${data.whatsapp}</td>
-                            <td>${data.department}</td>
+                              <label>${data.department}</label>
+                         
                             <td>${data.department2}</td>
                             <td>${data.college}</td>
                             <td>${data.exp}</td>
