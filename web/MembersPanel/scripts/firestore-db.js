@@ -429,7 +429,7 @@ fileButton.addEventListener('change', function uploadImage(e) {
      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
           function (snapshot) {
                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-               var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+               var progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(2); 
                if(progress=='100')     
                // Show alert
                document.querySelector('.success').innerHTML=`<i class="fa fa-check-circle" aria-hidden="true"></i> Updated Successfully`;
