@@ -175,6 +175,11 @@
   }
 
 
+        .box {
+           display: none;
+        }
+  
+    </style>
 
 
   
@@ -183,7 +188,9 @@
   
   
   </style>
-
+  <script src=
+  "https://code.jquery.com/jquery-1.12.4.min.js">
+      </script>
  
 </head>
 
@@ -234,7 +241,12 @@
 
          <div style="background-color: #202C58;padding: 5px;">
           <h2 style="text-align: center;font-weight: 700;color: rgb(255, 255, 255);margin-top: 5px;">RECRUITMENT TEST</h2></div> 
-    
+         
+
+
+       
+
+
  <div class="form">
 
 <p style="text-align: justify; font-weight: 400; margin-top: 10px; font-size: 13px">
@@ -251,8 +263,29 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
 
 
 
-<p style="text-align: left; font-weight: 400; margin-top: 15px; font-size: 13px; color: red">* Curate and analyse at least 5 welfare organisations,their social media handles and answer the following questions</p>
-          <form  id="registrations" style="margin-top: 10px">
+<p style="text-align: justify; font-weight: 400; margin-top: 15px; font-size: 13px; color: red">Curate and analyse at least 5 welfare organisations,their social media handles and answer the following questions</p>
+
+<div>
+  <select>
+    <option>Choose submission mode</option>
+    <option value="pdf">Submit PDF</option>
+    <option value="test">Submit Form</option>
+  
+</select>
+</div>
+
+
+<div class="pdf box" style="margin-top:15px">
+  Upload Files<br />
+  <input  type="file" id="files" multiple /><br />
+  <p id="uploading"></p>
+  <progress value="0" max="100" id="progress"></progress><br />
+  <button class="btn btn-primary"id="send">Upload</button>
+
+  </div>
+
+
+<div class="test box"> <form  id="registrations" style="margin-top: 10px">
        <div class="row">
          <div class="col-25">
            <label style="font-size: 12px;" for="name">Name<span style="color: red;">*</span></label>
@@ -271,15 +304,6 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
          </div>
        </div>
 
-
-       <div class="row">
-         <div class="col-25">
-           <label style="font-size: 12px;" for="contact">Contact no.<span style="color: red;">*</span></label>
-         </div>
-         <div class="col-75">
-           <input type="tel" id="Contact" name="contact"  maxlength="12"  title="Ten digits code"  placeholder="Your contact number.." required>
-         </div>
-       </div>
 
 
        <div class="row">
@@ -335,7 +359,7 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
        <div class="row" style="margin-left: 5px;margin-right: 5px;margin-top: 30px;">
          <input type="submit" id="submit" value="Submit">
        </div>
-          </form>
+          </form></div>
     </div>
           <div class="alert"><img src="assets/img/Tick.png"><br>Submitted successfully</div>
    </div>
@@ -399,6 +423,28 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+
+  <script>
+    // jQuery functions to hide and show the div
+    $(document).ready(function () {
+        $("select").change(function () {
+            $(this).find("option:selected")
+                   .each(function () {
+                var optionValue = $(this).attr("value");
+                if (optionValue) {
+                    $(".box").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                } else {
+                    $(".box").hide();
+                }
+            });
+        }).change();
+    });
+</script>
+
+
 
   <script>
        //Connection
@@ -415,6 +461,65 @@ var firebaseConfig = {
 //Init Firebase
 firebase.initializeApp(firebaseConfig);
 
+var files = [];
+document.getElementById("files").addEventListener("change", function(e) {
+  files = e.target.files;
+  for (let i = 0; i < files.length; i++) {
+    console.log(files[i]);
+  }
+});
+
+document.getElementById("send").addEventListener("click", function() {
+  //checks if files are selected
+  if (files.length != 0) {
+    //Loops through all the selected files
+    for (let i = 0; i < files.length; i++) {
+      //create a storage reference
+      var storage = firebase.storage().ref(files[i].name);
+
+      //upload file
+      var upload = storage.put(files[i]);
+
+      //update progress bar
+      upload.on(
+        "state_changed",
+        function progress(snapshot) {
+          var percentage =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          document.getElementById("progress").value = percentage;
+        },
+
+        function error() {
+          alert("error uploading file");
+        },
+
+        function complete() {
+          document.getElementById(
+            "uploading"
+          ).innerHTML += `${files[i].name} upoaded <br />`;
+        }
+      );
+    }
+  } else {
+    alert("No file chosen");
+  }
+});
+
+function getFileUrl(filename) {
+  //create a storage reference
+  var storage = firebase.storage().ref(filename);
+
+  //get file url
+  storage
+    .getDownloadURL()
+    .then(function(url) {
+      console.log(url);
+    })
+    .catch(function(error) {
+      console.log("error encountered");
+    });
+}
+
 // Reference messages collection
 var dataRef = firebase.database().ref("RecruitmentTest/");
 
@@ -428,7 +533,6 @@ function submitForm(e){
   // Get values
   var name = getInputVal('Membername');
   var email = getInputVal('Email');
-  var contact = getInputVal('Contact');
   var q1 = getInputVal('q1');
   var q2 = getInputVal('q2');
   var q3 = getInputVal('q3');
@@ -437,7 +541,7 @@ function submitForm(e){
 
 
   // Save message
-  saveData(name, email, contact, q1, q2, q3, q4);
+  saveData(name, email, q1, q2, q3, q4);
 
 
  // Show alert
@@ -455,12 +559,11 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-function saveData(name, email, contact, q1, q2, q3, q4){
+function saveData(name, email, q1, q2, q3, q4){
   var newDataRef = dataRef.push();
   newDataRef.set({
     name: name,
     email:email,
-    contact:contact,
     q1:q1,
     q2:q2,
     q3:q3,
@@ -471,31 +574,6 @@ function saveData(name, email, contact, q1, q2, q3, q4){
   </script>
 
 
-  <script>
-    
-    document.onkeydown=function(e)
-    {
-      if (event.keyCode == 123) 
-      {
-        return false;
-      }
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))
-      {
-        return false;
-      }
-  
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) 
-      {
-        return false;
-      }
-  
-      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) 
-      {
-        return false;
-      }
-    }
-  
-  </script>
 
 </body>
 
