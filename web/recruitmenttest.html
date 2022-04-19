@@ -26,6 +26,12 @@
 
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+
 
 
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
@@ -250,19 +256,20 @@
  <div class="form">
 
 <p style="text-align: justify; font-weight: 400; margin-top: 10px; font-size: 13px">
-Since we’re a social welfare organisation, how would you do the marketing of it in a greater way through social media.<br><br>
+Since we’re a social welfare organisation, how would you do the marketing of it in a greater way through social media.<br>
 
-We need marketing strategies in detailed way.Use any marketing strategy, research on what worked in history, or what the competitors did ( these are just hints , you can do your own research, use marketing models, etc )<br><br>
+We need marketing strategies in detailed way.Use any marketing strategy, research on what worked in history, or what the competitors did ( these are just hints , you can do your own research, use marketing models, etc )<br>
 
-Our goal is to get new users and maintain daily active users.<br><br>
+Our goal is to get new users and maintain daily active users.<br>
 
-  <span style="font-weight: 600">Draft a detailed answer</span> and submit it in pdf format or fill the form directly. Make sure to add your name in the top of the document.
+Draft a detailed answer and submit it in pdf format or fill the form directly. Make sure to add your name in the top of the document.
 
 
 </p>
 
 
 
+<p style="text-align: justify; font-weight: 400; margin-top: 15px; font-size: 13px; color: red">Curate and analyse at least 5 welfare organisations,their social media handles and answer the following questions</p>
 
 <div>
   <select>
@@ -276,10 +283,35 @@ Our goal is to get new users and maintain daily active users.<br><br>
 
 <div class="pdf box" style="margin-top:15px">
   Upload Files<br />
-  <input  type="file" id="files" multiple /><br />
-  <p id="uploading"></p>
-  <progress value="0" max="100" id="progress"></progress><br />
-  <button class="btn btn-primary"id="send">Upload</button>
+  <input accept="application/pdf"   type="file" id="files"/>
+  <input type="button" class="btn btn-secondary my-2" data-toggle="modal" data-target="#exampleModal" value="Preview" onclick="PreviewImage();" />
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="clear:both">
+ 
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe id="viewer" frameborder="2" width="100%" height="400"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+
+        </div>
+      </div>
+    </div>
+ </div>
+
+
+
+  <p style="color:black" id="uploading"></p>
+  
+  <progress style="width: 100%" value="0" max="100" id="progress"></progress><br />
+  <button class="btn btn-success" id="send">Upload</button>
 
   </div>
 
@@ -441,6 +473,15 @@ Our goal is to get new users and maintain daily active users.<br><br>
             });
         }).change();
     });
+
+
+
+
+    function PreviewImage() {
+    pdffile=document.getElementById("files").files[0];
+    pdffile_url=URL.createObjectURL(pdffile);
+    $('#viewer').attr('src',pdffile_url);
+}
 </script>
 
 
@@ -474,7 +515,7 @@ document.getElementById("send").addEventListener("click", function() {
     //Loops through all the selected files
     for (let i = 0; i < files.length; i++) {
       //create a storage reference
-      var storage = firebase.storage().ref(files[i].name);
+      var storage = firebase.storage().ref().child("pdfs/" + files[i].name);
 
       //upload file
       var upload = storage.put(files[i]);
@@ -495,7 +536,7 @@ document.getElementById("send").addEventListener("click", function() {
         function complete() {
           document.getElementById(
             "uploading"
-          ).innerHTML += `${files[i].name} upoaded <br />`;
+          ).innerHTML += `${files[i].name} uploaded <br />`;
         }
       );
     }
@@ -506,7 +547,7 @@ document.getElementById("send").addEventListener("click", function() {
 
 function getFileUrl(filename) {
   //create a storage reference
-  var storage = firebase.storage().ref(filename);
+  var storage = firebase.storage().ref().child("pdfs/"+ filename);
 
   //get file url
   storage
