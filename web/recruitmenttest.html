@@ -267,7 +267,6 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
 
 </p>
 
-
 <div>
   <select>
     <option>Choose submission mode</option>
@@ -313,7 +312,8 @@ Draft a detailed answer and submit it in pdf format or fill the form directly. M
   </div>
 
 
-<div class="test box"> <form  id="registrations" style="margin-top: 10px">
+<div class="test box"> 
+  <form  id="registrations" style="margin-top: 10px">
        <div class="row">
          <div class="col-25">
            <label style="font-size: 12px;" for="name">Name<span style="color: red;">*</span></label>
@@ -531,9 +531,12 @@ document.getElementById("send").addEventListener("click", function() {
         },
 
         function complete() {
-          document.getElementById(
-            "uploading"
-          ).innerHTML += `${files[i].name} uploaded <br />`;
+
+          document.querySelector('.alert').style.display = 'block';
+          document.querySelector('.form').style.display = 'none';
+          // document.getElementById(
+          //   "uploading"
+          // ).innerHTML += `${files[i].name} uploaded <br />`;
         }
       );
     }
