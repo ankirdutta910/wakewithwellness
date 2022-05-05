@@ -19,6 +19,7 @@ function register () {
   address = document.getElementById('address').value
   pincode = document.getElementById('pincode').value
   state = document.getElementById('state').value
+  status = document.getElementById('status').value
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -29,7 +30,8 @@ function register () {
   if (validate_field(name) == false || validate_field(regno) == false || validate_field(phone) == false || 
   validate_field(whatsapp) == false || validate_field(department) == false || validate_field(department2) == false || 
   validate_field(college) == false || validate_field(exp) == false || validate_field(blood) == false || 
-  validate_field(address) == false){
+  validate_field(address) == false) || 
+  validate_field(status) == false){
     alert('One or More Extra Fields is Invalid!!')
     return
   }
@@ -59,6 +61,7 @@ function register () {
       address : address,
       pincode : pincode,
       state : state,
+      status : status,
       
     }
 
