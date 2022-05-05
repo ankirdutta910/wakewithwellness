@@ -214,6 +214,8 @@ margin-bottom: 12px; /* Add some space below the input */
                 <input type="text" id="pincode" placeholder="Enter Pincode" name="pincode">
 
                 <input type="text" id="state" placeholder="Enter State" name="state">
+              
+               <input type="text" id="status" placeholder="Enter Status" name="status">
                 
              
                 <button onclick="register()">Add Member</button>
@@ -244,6 +246,7 @@ margin-bottom: 12px; /* Add some space below the input */
                     <th scope="col">Address</th> 
                     <th scope="col">Pincode</th> 
                     <th scope="col">State</th> 
+                       <th scope="col">Status</th> 
 
                     </tr>
                 </thead>
@@ -318,6 +321,7 @@ margin-bottom: 12px; /* Add some space below the input */
                             <td>${data.address}</td>
                             <td>${data.pincode}</td>
                             <td>${data.state}</td>
+                                     <td>${data.status}</td>
                       </tr>`;
             let table = document.getElementById('myTable')
             table.innerHTML += row
