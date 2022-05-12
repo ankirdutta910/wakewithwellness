@@ -286,25 +286,21 @@ async function getuserInfoRealtime(userID){
       </div>
   </div>
 <br>
+<hr style="background-color: #009efb">
 
   <div class="card-box mb-0" style="text-align:left">
-  <h3 class="card-title">Code of Ethics</h3>
+  <h3 class="card-title" style="color:white">Code of Ethics</h3>
   <div class="experience-box">
-      <ul class="experience-list">
-          <li>
-              <div class="experience-user">
-                  <div class="before-circle"></div>
-              </div>
-              <div class="experience-content">
-                  <div class="timeline-content">
-                  <td style="text-align: center;"><a style="color: cornflowerblue;" href="https://firebasestorage.googleapis.com/v0/b/website-818ed.appspot.com/o/CodeofEthics.pdf?alt=media&token=6af5a5ee-3079-45f1-a14e-0b35ccafe36c" ><i><img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" style="height: 20px;"></i><span> </span>View</a>
-                    
-                  </div>
-              </div>
-          </li>
+    
+       
+            
+           
+                 
+                  <button style="width: 100px; background-color: #009efb;border-radius: 5px;padding: 10px;border: none;cursor: pointer;color: white;margin-left:13px" onclick="location.href='https://firebasestorage.googleapis.com/v0/b/website-818ed.appspot.com/o/CodeofEthics.pdf?alt=media&token=6af5a5ee-3079-45f1-a14e-0b35ccafe36c'"><i><img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" style="height: 20px;"></i> View</button> 
+                 
+      
          
-        
-      </ul>
+   
   </div>
 </div>
 
