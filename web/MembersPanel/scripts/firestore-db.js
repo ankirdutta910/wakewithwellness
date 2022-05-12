@@ -21,7 +21,7 @@ function createUserCollection(user){
        address:"",
        state:"",
        pincode:"",
-         exp:"",
+       exp:"",
 
        status:""
 
@@ -67,7 +67,7 @@ async function getuserInfo(userID){
               <input type="password" id="loginPassword" placeholder="Password" style="width: 100%;
               height: 40px;padding-left: 10px;margin-bottom: 20px;background: #000;font-family: Montserrat;font-weight: 500;color: #fff;
               font-size: 12px; border-bottom: 2px solid transparent;border-top-left-radius: 2%; border-top-right-radius: 2%;border-color: cornflowerblue;">
-             <a href="#" onclick="forgotPass()">Forgot Password</a><br>
+              <a href="#" onclick="forgotPass()">Forgot Password</a><br>
               <div id="button_container" style="width: 100%;height: 45px;background-color: cornflowerblue;color: #fff;margin-top: 15px;" >
                   <button type="submit" style="width: 100%;height: 100%;background: transparent;color: inherit;font-family: Montserrat;letter-spacing: 1px;
                   font-weight: 900;font-size: 12px;cursor: pointer;align-items: center;">Login</button>
@@ -148,12 +148,12 @@ async function getuserInfoRealtime(userID){
         
         <div class="page-wrapper">
         <div class="content">
+        
             <div class="row">
-	    
-	    
-            <div class="container-fluid" style="color:white; background-color: #62b800; margin-bottom:10px; padding: 5px" role="alert"><span style="color:black; font-size:15px; text-align:left; font-weight:500">Notifications :</span> ${userInfo.status}</div>
+          
+          
+            <div class="container-fluid" style="color:white; background-color: #62b800; margin-bottom:10px ; padding: 5px" role="alert"><span style="color:black; font-size:15px; text-align:left; font-weight:500">Notifications :</span> ${userInfo.status}</div>
 
-	    
                 <div class="col-sm-7 col-6">
                     <h4 class="page-title" style="float:left;font-weight:500;">My Profile</h4>
                 </div>
@@ -285,6 +285,31 @@ async function getuserInfoRealtime(userID){
           </ul>
       </div>
   </div>
+<br>
+
+  <div class="card-box mb-0" style="text-align:left">
+  <h3 class="card-title">Code of Ethics</h3>
+  <div class="experience-box">
+      <ul class="experience-list">
+          <li>
+              <div class="experience-user">
+                  <div class="before-circle"></div>
+              </div>
+              <div class="experience-content">
+                  <div class="timeline-content">
+                  <td style="text-align: center;"><a style="color: cornflowerblue;" href="https://firebasestorage.googleapis.com/v0/b/website-818ed.appspot.com/o/CodeofEthics.pdf?alt=media&token=6af5a5ee-3079-45f1-a14e-0b35ccafe36c" ><i><img src="https://cdn-icons-png.flaticon.com/512/136/136522.png" style="height: 20px;"></i><span> </span>View</a>
+                    
+                  </div>
+              </div>
+          </li>
+         
+        
+      </ul>
+  </div>
+</div>
+
+
+
     </div>
         </div>
                        
@@ -338,9 +363,10 @@ async function getuserInfoRealtime(userID){
                 height: 40px;padding-left: 10px;margin-bottom: 20px;background: #000;font-family: Montserrat;font-weight: 500;color: #fff;
                 font-size: 12px; border-bottom: 2px solid transparent;border-top-left-radius: 2%; border-top-right-radius: 2%;border-color: cornflowerblue;">
                 <a href="#" onclick="forgotPass()">Forgot Password</a><br>
-              <div id="button_container" style="width: 100%;height: 45px;background-color: cornflowerblue;color: #fff;margin-top: 15px;" >
-                  <button type="submit" style="width: 100%;height: 100%;background: transparent;color: inherit;font-family: Montserrat;letter-spacing: 1px;
-                  font-weight: 900;font-size: 12px;cursor: pointer;align-items: center;">Login</button>
+                <div id="button_container" style="width: 100%;height: 45px;background-color: cornflowerblue;color: #fff;margin-top: 15px;" >
+                
+                 <button type="submit" style="width: 100%;height: 100%;background: transparent;color: inherit;font-family: Montserrat;letter-spacing: 1px;
+                    font-weight: 900;font-size: 12px;cursor: pointer;align-items: center;">Login</button>
                     
                 </div>
              </form>
@@ -429,8 +455,11 @@ fileButton.addEventListener('change', function uploadImage(e) {
      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
           function (snapshot) {
                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-               var progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(2); 
-               if(progress=='100')     
+             
+               var progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(2);  
+              
+               if(progress=='100')   
+                
                // Show alert
                document.querySelector('.success').innerHTML=`<i class="fa fa-check-circle" aria-hidden="true"></i> Updated Successfully`;
               
