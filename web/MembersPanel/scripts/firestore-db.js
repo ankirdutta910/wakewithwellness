@@ -152,7 +152,7 @@ async function getuserInfoRealtime(userID){
             <div class="row">
           
           
-           
+          
 
                 <div class="col-sm-7 col-6">
                     <h4 class="page-title" style="float:left;font-weight:500;">My Profile</h4>
@@ -163,8 +163,13 @@ async function getuserInfoRealtime(userID){
       <button type="button" style="margin-left:10px;border-color:#df0f00;background-color:black;padding:7px;"  data-toggle="modal" data-target="#exampleModal">
       <i class="fa fa-sign-out" style="color:#df0f00"></i>
     </button>
+    
                 </div>
             </div>
+           
+            <div class="container-fluid" style="margin-top:-25px ;background-color: #009efb; margin-bottom:10px ; padding: 5px" role="alert"><a style="color:white; font-size:15px" href="certificates.html">Download your certificate</a></div>
+            
+            
             <div class="card-box profile-header" style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.336);">
                 <div class="row">
                     <div class="col-md-12">
@@ -241,7 +246,7 @@ async function getuserInfoRealtime(userID){
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-box" style="text-align:left">
-                        <h3 class="card-title">Education Informations</h3>
+                        <h3 class="card-title" style="color:grey">Education Informations</h3>
                         <div class="experience-box">
                             <ul class="experience-list">
                                 <li>
@@ -266,7 +271,7 @@ async function getuserInfoRealtime(userID){
         
       </div>
       <div class="card-box mb-0" style="text-align:left">
-      <h3 class="card-title">Experience [Prior Experience in working for a NGO/CBO]</h3>
+      <h3 class="card-title" style="color:grey">Experience [Prior Experience in working for a NGO/CBO]</h3>
       <div class="experience-box">
           <ul class="experience-list">
               <li>
@@ -298,8 +303,9 @@ async function getuserInfoRealtime(userID){
 
 
     </div>
-        </div><br><br>
-	  <div style="background-color: #fff; position:fixed; bottom:0; width:100%; height:40px;padding-top:10px"><a href="certificates.html">Download your certificate</a></div>
+        </div><br>
+
+      
                        
                         `
                         editProfile["name"].value = userInfo.name
