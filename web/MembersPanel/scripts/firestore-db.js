@@ -299,7 +299,7 @@ async function getuserInfoRealtime(userID){
 
     </div>
         </div>
-	  <div style="background-color: #413F42; position:fixed; bottom:0; width:100%; height:40px;padding-top:10px"><a href="certificates.html">Download your certificate</a></div>
+	  <div style="background-color: #fff; position:fixed; bottom:0; width:100%; height:40px;padding-top:10px"><a href="certificates.html">Download your certificate</a></div>
                        
                         `
                         editProfile["name"].value = userInfo.name
