@@ -152,7 +152,7 @@ async function getuserInfoRealtime(userID){
             <div class="row">
           
           
-            <div class="container-fluid" style="color:white; background-color: #62b800; margin-bottom:10px ; padding: 5px" role="alert"><span style="color:black; font-size:15px; text-align:left; font-weight:500">Notifications :</span> ${userInfo.status}</div>
+           
 
                 <div class="col-sm-7 col-6">
                     <h4 class="page-title" style="float:left;font-weight:500;">My Profile</h4>
