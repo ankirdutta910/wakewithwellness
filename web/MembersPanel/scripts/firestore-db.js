@@ -101,6 +101,11 @@ async function getuserInfoRealtime(userID){
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	
+	
 
     <style>
     .profile-img .pic {
@@ -172,7 +177,7 @@ async function getuserInfoRealtime(userID){
  
   <div class="row" style="margin-top:-25px ;border: 1px solid #009efb; margin-bottom:10px ;color:white;height:35px">
     <div class="col-8" style="padding-top:7px">Download your certificate </div>
-    <div onclick="location.href='certificates.html'" class="col-4" style="background-color: #009efb;padding-top:7px">Click here</div>
+    <div onclick="location.href='certificates.html'" class="col-4" style="background-color: #009efb;padding-top:7px"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Click here</div>
   </div>
 </div>
             
