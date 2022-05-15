@@ -171,8 +171,8 @@ async function getuserInfoRealtime(userID){
             <div class="container-fluid">
  
   <div class="row" style="margin-top:-25px ;border: 1px solid #009efb; margin-bottom:10px ;color:white;height:35px">
-    <div class="col-8" style="padding-top:6px">Download your certificate </div>
-    <div onclick="location.href='certificates.html'" class="col-4" style="background-color: #009efb;padding-top:6px">Click here</div>
+    <div class="col-8" style="padding-top:7px">Download your certificate </div>
+    <div onclick="location.href='certificates.html'" class="col-4" style="background-color: #009efb;padding-top:7px">Click here</div>
   </div>
 </div>
             
