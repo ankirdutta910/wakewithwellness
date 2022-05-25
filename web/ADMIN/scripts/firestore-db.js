@@ -441,14 +441,14 @@ async function getuserInfoRealtime(userID){
                             
                                 <tbody>
 
-                                <tr>
+                                   <tr>
                                 <td style="min-width: 200px;">
                                     
-                                    <h2><a href="contents.html"  >Contents</a></h2>
+                                    <h2><a href="floodrelieffund.html" >Flood Relief Fund</a></h2>
                                 </td>                 
 
                                 <td class="text-right">
-                                    <a href="contents.html"  class="btn btn-outline-primary take-btn">View</a>
+                                    <a href="floodrelieffund.html"  class="btn btn-outline-primary take-btn">View</a>
                                 </td>
                             </tr>
 
