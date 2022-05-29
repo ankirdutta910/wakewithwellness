@@ -149,8 +149,10 @@ async function getuserInfoRealtime(userID){
                         
                         <div class="testbox">
                         <form onsubmit="updateattendance(event)" id="feedbackform">
-                        <h1 style="color: #fff;text-align: center;">MEMBERS FEEDBACK</h1><hr>
+                        <h1 style="color: #fff;text-align: center;">MEMBERS FEEDBACK</h1><hr style="background-color: white">
 
+                        <p style="color: #fff;text-align: center;font-style: italic;">This form is for changes required in the working structure and improvement in the departmental competencies. Your feedback counts. </p>
+<br><br>
                         <div class="form-group row">
                          <label for="name" class="col-sm-2 col-form-label">Name :</label>
                          <div class="col-sm-10">
@@ -176,8 +178,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f1" class="col-sm-6 col-form-label">Are the tasks or events held to contribute to the development of society?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f1" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f1" style="color: white;font-weight: 400;" required>
+                              <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Agree">Agree</option>
                                   <option style="color: black;font-weight: 400;" value="Disagree">Disagree</option>
                               </select>
@@ -190,8 +192,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f2" class="col-sm-6 col-form-label">Is WWW helping in developing your social and management skills ?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f2" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f2" style="color: white;font-weight: 400;" required>
+                              <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
                                   <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
@@ -204,8 +206,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f3" class="col-sm-6 col-form-label">Is WWW meeting your expectations as a social welfare organization?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f3" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f3" style="color: white;font-weight: 400;" required> 
+                              <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
                                   <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
@@ -219,8 +221,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f4" class="col-sm-6 col-form-label">Is our official website user friendly?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f4" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f4" style="color: white;font-weight: 400;" required>
+                              <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
                                   <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
@@ -233,7 +235,7 @@ async function getuserInfoRealtime(userID){
                          <label for="f5" class="col-sm-6 col-form-label">What are the necessary changes we need to make if any ? (Give any necessary input)
                          </label>
                          <div class="col-sm-6">
-                         <textarea id="f5" maxlength="300" style="padding: 1px;color:white"  required ></textarea>
+                         <textarea id="f5" required maxlength="300" style="padding: 1px;color:white"  required ></textarea>
                          </div>
                          </div>
 
@@ -242,8 +244,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f6" class="col-sm-6 col-form-label">How much would you rate the overall functioning of departments?
                          </label>
                          <div class="col-sm-6">
-                         <select id="f6" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <select id="f6" style="color: white;font-weight: 400;" required>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -263,8 +265,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f7" class="col-sm-6 col-form-label">How much would you rate the overall functioning of the current board?
                          </label>
                          <div class="col-sm-6">
-                         <select id="f7" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <select id="f7" style="color: white;font-weight: 400;" required>
+                         <option style="color: grey" required value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -284,8 +286,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f8" class="col-sm-6 col-form-label">Are you willing to continue in WWW for the coming years?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f8" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f8" style="color: white;font-weight: 400;" required>
+                              <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
                               </select>
@@ -301,8 +303,8 @@ async function getuserInfoRealtime(userID){
                          <label for="f9" class="col-sm-6 col-form-label">Are you interested in managing the board of WWW anytime in the future?
                          </label>
                          <div class="col-sm-6">
-                              <select id="f9" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
+                              <select id="f9" style="color: white;font-weight: 400;" required>
+                                  <option style="color: grey" value="">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
                               
@@ -325,7 +327,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="sudhanshu" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" readonly value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -347,7 +349,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="arnav" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" readonly value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -369,7 +371,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="ankur" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" readonly value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -391,7 +393,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="sanjushree" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -413,7 +415,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="rudra" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -435,7 +437,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="rahul" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -457,7 +459,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="jimpi" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -479,7 +481,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="krishnakshi" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -501,7 +503,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="jai" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -522,7 +524,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="vedant" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -543,7 +545,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="amit" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -564,7 +566,7 @@ async function getuserInfoRealtime(userID){
                          </label>
                          <div class="col-sm-2">
                          <select id="shruti" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Rating</option>
+                         <option style="color: grey" value="">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
