@@ -171,12 +171,12 @@ async function getuserInfoRealtime(userID){
                          </div>
                          </div>
 
-
+<br><br><br>
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are the tasks or events held meeting the development of society?
+                         <label for="f1" class="col-sm-6 col-form-label">Are the tasks or events held to contribute to the development of society?
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
+                              <select id="f1" style="color: white;font-weight: 400;">
                               <option style="color: grey" value="Present">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Agree">Agree</option>
                                   <option style="color: black;font-weight: 400;" value="Disagree">Disagree</option>
@@ -185,55 +185,65 @@ async function getuserInfoRealtime(userID){
                          </div>
 
 
+
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are the number of tasks held enough for the functioning of the team ?(i.e 2 events per week)
+                         <label for="f2" class="col-sm-6 col-form-label">Is WWW helping in developing your social and management skills ?
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
+                              <select id="f2" style="color: white;font-weight: 400;">
                               <option style="color: grey" value="Present">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Should increase">Should increase</option>
+                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
                               </select>
                          </div>
                          </div>
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are you happy with the functioning of departments?
+                         <label for="f3" class="col-sm-6 col-form-label">Is WWW meeting your expectations as a social welfare organization?
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
+                              <select id="f3" style="color: white;font-weight: 400;">
                               <option style="color: grey" value="Present">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="May improve">May improve</option>
+                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
+                              </select>
+                         </div>
+                         </div>
+
+
+                     
+                         <div class="form-group row">
+                         <label for="f4" class="col-sm-6 col-form-label">Is our official website user friendly?
+                         </label>
+                         <div class="col-sm-6">
+                              <select id="f4" style="color: white;font-weight: 400;">
+                              <option style="color: grey" value="Present">Select</option>
+                                  <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
+                                  <option style="color: black;font-weight: 400;" value="No">No</option>
+                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
                               </select>
                          </div>
                          </div>
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are you happy with the functioning of the current board?
+                         <label for="f5" class="col-sm-6 col-form-label">What are the necessary changes we need to make if any ? (Give any necessary input)
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
-                                  <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
-                                  <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="May improve">May improve</option>
-                              </select>
+                         <textarea id="f5" maxlength="300" style="padding: 1px;color:white"  required ></textarea>
                          </div>
                          </div>
 
 
-                         
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">How would you rate the overall performance of the entire board
+                         <label for="f6" class="col-sm-6 col-form-label">How much would you rate the overall functioning of departments?
                          </label>
                          <div class="col-sm-6">
-                         <select id="attend" style="color: white;font-weight: 400;">
-                         <option style="color: grey" value="Present">Select</option>
+                         <select id="f6" style="color: white;font-weight: 400;">
+                         <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
                              <option style="color: black;font-weight: 400;" value="3">3</option>
@@ -249,82 +259,53 @@ async function getuserInfoRealtime(userID){
                          </div>
 
 
-
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Is WWW helping in developing your social and management skills ?
+                         <label for="f7" class="col-sm-6 col-form-label">How much would you rate the overall functioning of the current board?
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="f7" style="color: white;font-weight: 400;">
+                         <option style="color: grey" value="Present">Rating</option>
+                             <option style="color: black;font-weight: 400;" value="1">1</option>
+                             <option style="color: black;font-weight: 400;" value="2">2</option>
+                             <option style="color: black;font-weight: 400;" value="3">3</option>
+                             <option style="color: black;font-weight: 400;" value="4">4</option>
+                             <option style="color: black;font-weight: 400;" value="5">5</option>
+                             <option style="color: black;font-weight: 400;" value="6">6</option>
+                             <option style="color: black;font-weight: 400;" value="7">7</option>
+                             <option style="color: black;font-weight: 400;" value="8">8</option>
+                             <option style="color: black;font-weight: 400;" value="9">9</option>
+                             <option style="color: black;font-weight: 400;" value="10">10</option>
+                         </select>
+                         </div>
+                         </div>
+
+
+                         <div class="form-group row">
+                         <label for="f8" class="col-sm-6 col-form-label">Are you willing to continue in WWW for the coming years?
+                         </label>
+                         <div class="col-sm-6">
+                              <select id="f8" style="color: white;font-weight: 400;">
                               <option style="color: grey" value="Present">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
                               </select>
                          </div>
                          </div>
 
 
+                       
+
+
+
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Is WWW meeting your expectations as an Organization?
+                         <label for="f9" class="col-sm-6 col-form-label">Are you interested in managing the board of WWW anytime in the future?
                          </label>
                          <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
+                              <select id="f9" style="color: white;font-weight: 400;">
                               <option style="color: grey" value="Present">Select</option>
                                   <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
                                   <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
-                              </select>
-                         </div>
-                         </div>
-
-
-                         <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Is our official website user friendly?
-                         </label>
-                         <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
-                                  <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
-                                  <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
-                              </select>
-                         </div>
-                         </div>
-
-
-                         <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are you willing to continue in WWW for the coming years?
-                         </label>
-                         <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
-                                  <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
-                                  <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
-                              </select>
-                         </div>
-                         </div>
-
-
-                         <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">What are the necessary changes we need to make if any ?
-                         </label>
-                         <div class="col-sm-6">
-                         <textarea id="work" maxlength="300" style="padding: 1px;color:white"  required ></textarea>
-                         </div>
-                         </div>
-
-
-
-                         <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Are you interested  for managing the board?
-                         </label>
-                         <div class="col-sm-6">
-                              <select id="attend" style="color: white;font-weight: 400;">
-                              <option style="color: grey" value="Present">Select</option>
-                                  <option style="color: black;font-weight: 400;" value="Yes">Yes</option>
-                                  <option style="color: black;font-weight: 400;" value="No">No</option>
-                                  <option style="color: black;font-weight: 400;" value="Not sure">Not sure</option>
+                              
                               </select>
                          </div>
                          </div>
@@ -333,17 +314,17 @@ async function getuserInfoRealtime(userID){
 
 
 
-
-
-
+<br><br>
+<h4>Board members rating :</h4>
+<br><br>
 
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of HR and Finance Head : <span style="font-weight: bold">Sudhanshu Borthakur</span>
+                         <label for="Sudhanshu" class="col-sm-6 col-form-label">Rate the overall performance of HR and Finance Head : <span style="font-weight: bold">Sudhanshu Borthakur</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="sudhanshu" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -362,10 +343,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Administrative Head : <span style="font-weight: bold">Arnavraj Baruah</span>
+                         <label for="Arnav" class="col-sm-6 col-form-label">Rate the overall performance of Administrative Head : <span style="font-weight: bold">Arnavraj Baruah</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="arnav" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -384,10 +365,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Technical & Logistics Head : <span style="font-weight: bold">Ankur Jyoti Dutta</span>
+                         <label for="Ankur" class="col-sm-6 col-form-label">Rate the overall performance of Technical & Logistics Head : <span style="font-weight: bold">Ankur Jyoti Dutta</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="ankur" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -406,10 +387,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Head of Operations : <span style="font-weight: bold">Sanjushree Bharadwaj</span>
+                         <label for="Sanjushree" class="col-sm-6 col-form-label">Rate the overall performance of Head of Operations : <span style="font-weight: bold">Sanjushree Bharadwaj</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="sanjushree" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -428,10 +409,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Events Head : <span style="font-weight: bold">Rudra Nath</span>
+                         <label for="Rudra" class="col-sm-6 col-form-label">Rate the overall performance of Events Head : <span style="font-weight: bold">Rudra Nath</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="rudra" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -450,10 +431,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Public Relations Head : <span style="font-weight: bold">Rahul kar</span>
+                         <label for="Rahul" class="col-sm-6 col-form-label">Rate the overall performance of Public Relations Head : <span style="font-weight: bold">Rahul kar</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="rahul" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -472,10 +453,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Public Relations Head : <span style="font-weight: bold">Jimpi Deka</span>
+                         <label for="Jimpi" class="col-sm-6 col-form-label">Rate the overall performance of Public Relations Head : <span style="font-weight: bold">Jimpi Deka</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="jimpi" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -494,10 +475,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Editorial Head : <span style="font-weight: bold">Krishnakshi Majumdar</span>
+                         <label for="Krishnakshi" class="col-sm-6 col-form-label">Rate the overall performance of Editorial Head : <span style="font-weight: bold">Krishnakshi Majumdar</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="krishnakshi" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -516,10 +497,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Curation Head : <span style="font-weight: bold">Jaidhitya Jonna</span>
+                         <label for="Jai" class="col-sm-6 col-form-label">Rate the overall performance of Curation Head : <span style="font-weight: bold">Jaidhitya Jonna</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="jai" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -537,10 +518,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Curation Head : <span style="font-weight: bold">Vedant Rasal</span>
+                         <label for="Vedant" class="col-sm-6 col-form-label">Rate the overall performance of Curation Head : <span style="font-weight: bold">Vedant Rasal</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="vedant" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -558,10 +539,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Outreach Head : <span style="font-weight: bold">Amit Debbarma</span>
+                         <label for="Amit" class="col-sm-6 col-form-label">Rate the overall performance of Outreach Head : <span style="font-weight: bold">Amit Debbarma</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="amit" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -579,10 +560,10 @@ async function getuserInfoRealtime(userID){
 
 
                          <div class="form-group row">
-                         <label for="inputPassword" class="col-sm-6 col-form-label">Rate the overall performance of Publicity & Marketing Head : <span style="font-weight: bold">Shruti Tater</span>
+                         <label for="Shruti" class="col-sm-6 col-form-label">Rate the overall performance of Publicity & Marketing Head : <span style="font-weight: bold">Shruti Tater</span>
                          </label>
                          <div class="col-sm-2">
-                         <select id="attend" style="color: white;font-weight: 400;">
+                         <select id="shruti" style="color: white;font-weight: 400;">
                          <option style="color: grey" value="Present">Rating</option>
                              <option style="color: black;font-weight: 400;" value="1">1</option>
                              <option style="color: black;font-weight: 400;" value="2">2</option>
@@ -695,13 +676,55 @@ async function getuserInfoRealtime(userID){
 
 function updateattendance(event){
   event.preventDefault()
-  var Feb1 = document.getElementById('attend').value
-  var Feb1f = document.getElementById('work').value
+  var f1 = document.getElementById('f1').value
+  var f2 = document.getElementById('f2').value
+  var f3 = document.getElementById('f3').value
+  var f4 = document.getElementById('f4').value
+  var f5 = document.getElementById('f5').value
+  var f6 = document.getElementById('f6').value
+  var f7 = document.getElementById('f7').value
+  var f8 = document.getElementById('f8').value
+  var f9 = document.getElementById('f9').value
+
+  var sudhanshu = document.getElementById('sudhanshu').value
+  var arnav = document.getElementById('arnav').value
+  var ankur = document.getElementById('ankur').value
+  var sanjushree = document.getElementById('sanjushree').value
+  var rudra = document.getElementById('rudra').value
+  var rahul = document.getElementById('rahul').value
+  var jimpi = document.getElementById('jimpi').value
+  var krishnakshi = document.getElementById('krishnakshi').value
+  var jai = document.getElementById('jai').value
+  var vedant = document.getElementById('vedant').value
+  var amit = document.getElementById('amit').value
+  var shruti = document.getElementById('shruti').value
   var userRef = firebase.firestore().collection('feedbacks').doc(firebase.auth().currentUser.uid);
 
   var setWithMerge = userRef.set({
-       Feb1:Feb1,
-       Feb1f:Feb1f
+       f1:f1,
+       f2:f2,
+       f3:f3,
+       f4:f4,
+       f5:f5,
+       f6:f6,
+       f7:f7,
+       f8:f8,
+       f9:f9,
+
+       sudhanshu:sudhanshu,
+       arnav:arnav,
+       ankur:ankur,
+       sanjushree:sanjushree,
+       rudra:rudra,
+       rahul:rahul,
+       jimpi:jimpi,
+       krishnakshi:krishnakshi,
+       jai:jai,
+       vedant:vedant,
+       amit:amit,
+       shruti:shruti,
+     
+
 
   },{ merge: true}).then(()=>{
     document.querySelector('.alert').style.display = 'block';
