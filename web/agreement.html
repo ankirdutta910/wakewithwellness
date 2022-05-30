@@ -164,7 +164,7 @@ input[type=submit] {
  
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
@@ -228,11 +228,155 @@ input[type=submit] {
   <section style="margin-top: -80px">
   
    <div class="container1">
+<form id="extraForm">
+  <div class="row">
+    <div class="col-25">
+      <label for="name">Full name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="Membername" name="name" placeholder="Your name.." required>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="email">E-mail ID</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="Email" name="email" placeholder="Your e-mail.." required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="contact">Contact No.</label>
+    </div>
+    <div class="col-75">
+      <input type="tel" id="Contact" name="contact"  maxlength="10" minlength="10" title="Ten digits code"  placeholder="Your contact number.." required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="whatsapp">Whatsapp No.</label>
+    </div>
+    <div class="col-75">
+      <input type="tel" id="Whatsapp" name="whatsapp"  maxlength="10" minlength="10" title="Ten digits code"  placeholder="Your whatsapp number.." required>
+    </div>
+  </div>
 
-     <h4 style="text-align: center">Form closed</h4>
+  <div class="row">
+    <div class="col-25">
+      <label for="alternateNo">Alternate Contact Number (State your relation with the person)</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="Alternate" name="alternateNo" title="Ten digits code"  placeholder="Your alternate number (relation).." required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="department">Department</label>
+    </div>
+    <div class="col-75">
+      <select id="Department" name="department" required>
+        <option value="" disabled selected>Select your department</option>
+        <option value="Curation Department">Curation Department</option>
+        <option value="Editorial Department">Editorial Department</option>
+        <option value="Design & Media Department">Design & Media Department</option>
+        <option value="PR Department">Public Relations Department</option>
+        <option value="Events Department">Events Department</option>
+        <option value="Marketing Department">Marketing Department</option>
+        <option value="None">None</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label for="department">Department (preference II)</label>
+    </div>
+    <div class="col-75">
+      <select id="Department2" name="department">
+        <option value="" disabled selected>Select your department</option>
+        <option value="Curation Department">Curation Department</option>
+        <option value="Design & Media Department">Design & Media Department</option>
+        <option value="PR Department">Public Relations Department</option>
+        <option value="Events Department">Events Department</option>
+        <option value="Marketing Department">Marketing Department</option>
+   
+      </select>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="institution">Name of institution you are currently enrolled in / workplace</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="College" name="institution" placeholder="Your educational institution.." required>
+    </div>
+  </div>
+
+
+  
+
+  <div style="margin-top: 80px;">
+    <label>
+        <input type="checkbox" id="Checkbox1" name="declaration" required>   I understand that all the funds raised/ donated will be used only for WakeWithWellness (after getting approval from the Head of Finance) and not for any other reasons. If found indulging in such activity, I recognize that will be the reason for immediate removal from WakeWithWellness, will have to compensate the entire amount of misused finances, and will face the relevant consequences.<span style="color: red;">*</span></label>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox2" name="declaration" required>   I understand that I should maintain confidentiality of plans, ideas, resources, materials, etc. discussed/used amongst the team. If I wish to implement the aforementioned elsewhere or share them with a third party not affiliated with WakeWithWellness, I will get approval from the HR and Administrative head first. After getting approval, I will provide due credit per the standards of WakeWithWellness, if this is implemented or shared elsewhere. I recognize that if I breach this clause, I can be removed from WakeWithWellness immediately and will face the relevant consequences. I understand that this clause stands even after leaving WakeWithWellness that the material can not be shared with any third party without approval, and I will not engage in such practices.<span style="color: red;">*</span> </label>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox3" name="declaration" required>    If at any point of time I want to discontinue working for my position, I will inform my CBO’s HR Head or respective Department Head , minimum 4 weeks prior and I will continue working in my position for these 4 weeks. The only exception to this clause is immediate termination of position in case of an emergency as determined by WakeWithWellness. I recognize that reasons such as exams, vacations, packed schedules, etc. do not stand ground as an emergency and I will continue working for the remaining 4 weeks till the termination of the position. Note: You can take breaks as and when required, but the HR or respective Departmental Head should be informed minimum 1 week in advance depending on the nature of the leave. <span style="color: red;">*</span></label>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox4" name="declaration" required> I will work to the best of my ability. I recognize that continuous negligence of responsibilities, deadlines and confidentiality rules will result in my removal from WakeWithWellness <span style="color: red;">*</span> </label>
+  </div>
+
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox5" name="declaration" required> I understand that if I am found indulging in malpractices of any sort, spreading misinformation about WakeWithWellness and our work, I will be removed from WakeWithWellness immediately and will face the relevant consequences.<span style="color: red;">*</span></label>
+  </div>
+
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox6" name="declaration" required> I will respect all individuals and their preferred identity, be inclusive in my position, conduct all my responsibilities with dedication, transparency and integrity. <span style="color: red;">*</span></label>
+  </div>
+
+
+
+  <div style="margin-top: 40px;">
+      <label>
+          <input type="checkbox" id="Checkbox7" name="declaration" required>   I will abide the code of ethics and professional conduct of <span style="font-weight: bold;">WakeWithWellness</span> and <span style="font-weight: bold;">United Nations</span><span style="color: red;">*</span> </label>
+  </div>
+
+  <div class="alert">Agreement submitted successfully</div>
+
+
+  <div class="row">
+    <input type="submit" id="submit" value="Submit">
+  </div>
+</form>
 
 </div>
-      </section>
 
    
 
