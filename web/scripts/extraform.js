@@ -1,13 +1,13 @@
 //Connection
 const firebaseConfig = {
-  apiKey: "AIzaSyBTOvD0aod-fntZ0VYbT6EAp9z1L_bqKwY",
-  authDomain: "website-818ed.firebaseapp.com",
-  databaseURL: "https://website-818ed-default-rtdb.firebaseio.com",
-  projectId: "website-818ed",
-  storageBucket: "website-818ed.appspot.com",
-  messagingSenderId: "542030860652",
-  appId: "1:542030860652:web:ee0bef0509915aa1da2349",
-  measurementId: "G-2VWCQ9QR4S"
+  apiKey: "AIzaSyDPI48GnqgmNA9aD42AO7MErMgVTcBVdQU",
+  authDomain: "interns-ed08d.firebaseapp.com",
+  databaseURL: "https://interns-ed08d-default-rtdb.firebaseio.com",
+  projectId: "interns-ed08d",
+  storageBucket: "interns-ed08d.appspot.com",
+  messagingSenderId: "821769104185",
+  appId: "1:821769104185:web:253f71ca9aa6b592f7d6e8",
+  measurementId: "G-7EHCSN5SY8"
 };
 
 //Init Firebase
