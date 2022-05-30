@@ -312,6 +312,20 @@ async function getuserInfoRealtime(userID){
 													<a href="agreementpanel.html" class="btn btn-outline-primary take-btn">View</a>
 												</td>
 											</tr>
+											
+											
+                                            						<tr>
+												<td style="min-width: 200px;">
+													
+													<h2><a href="membersfeedback.html">Member's Feedbacks</a></h2>
+												</td>                 
+
+												<td class="text-right">
+													<a href="membersfeedback.html" class="btn btn-outline-danger take-btn">View</a>
+												</td>
+											</tr>
+											
+											
 											<tr>
 												<td style="min-width: 200px;">
 													
