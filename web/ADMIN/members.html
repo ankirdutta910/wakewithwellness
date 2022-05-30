@@ -299,7 +299,7 @@ margin-bottom: 12px; /* Add some space below the input */
         db.settings({ timestampInSnapshots: true});
 
 
-        db.collection("users").orderBy('department').get().then(querySnapshot=>{
+        db.collection("users").orderBy('regno').get().then(querySnapshot=>{
         querySnapshot.forEach(doc=>{
             let data = doc.data();
             let row  = `<tr>
