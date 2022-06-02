@@ -1,31 +1,4 @@
-// const cafeList = document.querySelector('#cafe-list');
 
-// // create element & render cafe
-// function renderCafe(doc){
-//     let li = document.createElement('li');
-//     let name = document.createElement('span');
-//     let regno = document.createElement('span');
-
-//     li.setAttribute('data-id', doc.id);
-//     name.textContent = doc.data().name;
-//     regno.textContent = doc.data().regno;
-
-//     li.appendChild(name);
-//     li.appendChild(regno);
-
-//     cafeList.appendChild(li);
-
-//     document.getElementById('name').innerHTML = name;
-//     document.getElementById('forward').innerHTML = 'Forward Power:' + regno;
-
-// }
-
-// // getting data
-// db.collection('feedbacks').get().then(snapshot => {
-//     snapshot.docs.forEach(doc => {
-//         renderCafe(doc);
-//     });
-// });
 
 
 db.collection('feedbacks').orderBy('name').get().then((s) => {
@@ -36,9 +9,9 @@ db.collection('feedbacks').orderBy('name').get().then((s) => {
         $("#accordion").append(`
   <div class="card">
     <div class="card-header" id="heading`+ n +`">
-        <p class="mb-0">
-            <p style="cursor: pointer; font-weight: bold" class="text" data-toggle="collapse" data-target="#collapse`+ n+`">`+ x.data().name +`</p>
-        </p>
+        
+            <p style="cursor: pointer; font-weight: bold" class="mb-0 text" data-toggle="collapse" data-target="#collapse`+ n+`">`+ x.data().name +`</p>
+       
      </div>
   
      <div id="collapse`+ n +`" class="collapse" data-parent="#accordion">
